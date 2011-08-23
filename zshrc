@@ -46,8 +46,10 @@ export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
 # ignore duplicate history entries
 setopt histignoredups
 
-# keep TONS of history
+# keep TONS of history, ignore common commands and duplicate lines
 export HISTSIZE=4096
+export HISTIGNORE="&:ls:cd:[bf]g:exit" 
+export HISTCONTROL=ignoredups          
 
 # look for ey config in project dirs
 export EYRC=./.eyrc
