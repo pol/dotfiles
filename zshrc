@@ -10,6 +10,7 @@ setopt auto_cd
 
 # use vim as an editor
 export EDITOR=vim
+export SVN_EDITOR=$EDITOR
 
 # aliases
 if [ -e "$HOME/.aliases" ]; then
