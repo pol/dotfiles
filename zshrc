@@ -68,3 +68,9 @@ setopt CORRECT CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
+
+# Enable BASH-style regexp
+setopt BASH_REMATCH
+
+# rvm-install added line:
+if [[ -s /Users/pol/.rvm/scripts/rvm ]] ; then source /Users/pol/.rvm/scripts/rvm ; fi
