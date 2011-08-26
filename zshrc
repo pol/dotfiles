@@ -10,6 +10,8 @@ setopt auto_cd
 
 # use vim as an editor
 export EDITOR=vim
+export GUI_EDITOR=mate
+export BUNDLE_EDITOR=$GUI_EDITOR
 export SVN_EDITOR=$EDITOR
 
 # aliases
