@@ -21,3 +21,8 @@ alias -g G='| grep'
 alias -g M='| less'
 alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
+
+alias crvmrc="echo \"rvm use \`rvm current\`\" >> .rvmrc; rvm rvmrc trust ."
+alias bo="EDITOR=$BUNDLE_EDITOR bundle open" 
+alias edit=$GUI_EDITOR
+alias zshrc='. ~/.zshrc && . ~/.zlogin'
