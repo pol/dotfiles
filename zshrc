@@ -74,5 +74,9 @@ setopt EXTENDED_GLOB
 # Enable BASH-style regexp
 setopt BASH_REMATCH
 
+# PATH
+PATH="/usr/local/bin:/usr/local/lib:/usr/local/sbin:/Users/pol/bin:/Users/pol/bin/depot_tools:${PATH}"
+export PATH
+
 # rvm-install added line:
 if [[ -s /Users/pol/.rvm/scripts/rvm ]] ; then source /Users/pol/.rvm/scripts/rvm ; fi
