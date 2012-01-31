@@ -75,7 +75,7 @@ setopt EXTENDED_GLOB
 setopt BASH_REMATCH
 
 # PATH
-PATH="/usr/local/bin:/usr/local/lib:/usr/local/sbin:/Users/pol/bin:/Users/pol/bin/depot_tools:${PATH}"
+PATH="/Library/PostgreSQL/9.0/bin:/usr/local/bin:/usr/local/lib:/usr/local/sbin:/Users/pol/bin:/Users/pol/bin/depot_tools:${PATH}"
 export PATH
 
 # rvm-install added line:
