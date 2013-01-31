@@ -10,7 +10,7 @@ setopt auto_cd
 
 # use vim as an editor
 export EDITOR=vim
-export GUI_EDITOR=mate
+export GUI_EDITOR=subl
 export BUNDLE_EDITOR=$GUI_EDITOR
 export SVN_EDITOR=$EDITOR
 
@@ -74,9 +74,16 @@ setopt EXTENDED_GLOB
 # Enable BASH-style regexp
 setopt BASH_REMATCH
 
+# Disable autocorrect
+unsetopt correct_all 
+
 # PATH
 PATH="/Library/PostgreSQL/9.0/bin:/usr/local/bin:/usr/local/lib:/usr/local/sbin:/Users/pol/bin:/Users/pol/bin/depot_tools:${PATH}"
 export PATH
 
 # rvm-install added line:
 if [[ -s /Users/pol/.rvm/scripts/rvm ]] ; then source /Users/pol/.rvm/scripts/rvm ; fi
+
+[ -s "/Users/pol/.scm_breeze/scm_breeze.sh" ] && source "/Users/pol/.scm_breeze/scm_breeze.sh"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

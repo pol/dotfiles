@@ -31,3 +31,11 @@ alias rake='noglob rake'
 alias ssht_chef_msu="ssh -f login.msu.montana.edu -L 4141:chef.rcg.montana.edu:4040 -N"
 alias ssht_chef_couch_msu="ssh -f chef.rcg.montana.edu -L 6984:localhost:5984 -N"
 alias ssht_chef_couch_remote="ssh -f login.msu.montana.edu -L 2222:chef.rcg.montana.edu:22 -N && ssh -f localhost -p 2222 -L 6984:localhost:5984 -N"
+
+alias start_postgres="sudo -u postgres /Library/PostgreSQL/9.0/bin/pg_ctl -D /Library/PostgreSQL/9.0/data startj"
+alias stop_postgres="sudo -u postgres /Library/PostgreSQL/9.0/bin/pg_ctl -D /Library/PostgreSQL/9.0/data stop"
+
+alias tasks="mvim ~/.atea_tasks/tasks.txt"
+alias atea="tasks"
+alias shef="shef -z -c ~/.chef/knife.rb"
+# suppress autocorrect with alias (alias heroku='nocorrect heroku')
