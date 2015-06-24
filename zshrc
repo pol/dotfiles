@@ -15,15 +15,6 @@ fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
 autoload -U compinit
 compinit
 
-# automatically enter directories without cd
-setopt auto_cd
-
-# use vim as an editor
-export EDITOR=vim
-export GUI_EDITOR=subl
-export BUNDLE_EDITOR=$GUI_EDITOR
-export SVN_EDITOR=$EDITOR
-
 # load custom executable functions
 for function in ~/.zsh/functions/*; do
   source $function
@@ -66,52 +57,6 @@ bindkey "^P" history-search-backward
 bindkey "^Y" accept-and-hold
 bindkey "^N" insert-last-word
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-
-<<<<<<< HEAD
-# expand functions in the prompt
-setopt prompt_subst
-
-# prompt
-export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
-
-# ignore duplicate history entries
-setopt histignoredups
-
-# keep TONS of history, ignore common commands and duplicate lines
-export HISTSIZE=4096
-export HISTIGNORE="&:ls:cd:[bf]g:exit" 
-export HISTCONTROL=ignoredups          
-export HISTTIMEFORMAT="%F %T "
-
-# look for ey config in project dirs
-export EYRC=./.eyrc
-
-# automatically pushd
-setopt auto_pushd
-export dirstacksize=5
-
-# awesome cd movements from zshkit
-setopt AUTOCD
-setopt AUTOPUSHD PUSHDMINUS PUSHDSILENT PUSHDTOHOME
-setopt cdablevars
-
-# Try to correct command line spelling
-setopt CORRECT CORRECT_ALL
-
-# Enable extended globbing
-unsetopt EXTENDED_GLOB
-
-# Enable BASH-style regexp
-setopt BASH_REMATCH
-
-# Disable autocorrect
-unsetopt correct_all 
-
-# PATH
-PATH="/Library/PostgreSQL/9.0/bin:/usr/local/bin:/usr/local/lib:/usr/local/sbin:/Users/pol/bin:/Users/pol/bin/depot_tools:${PATH}"
-export PATH
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
