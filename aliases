@@ -1,53 +1,19 @@
-alias migrate="rake db:migrate db:test:prepare"
-alias remigrate="rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare"
-alias remongrate="rake mongoid:migrate && rake mongoid:migrate:redo"
-alias g="git"
-alias s="bundle exec rspec"
-alias cuc="bundle exec cucumber"
-alias gi="gem install"
-alias giv="gem install -v"
-alias gci="git pull --rebase && rake && git push"
-alias tlf="tail -f"
+# Unix
+alias ll="ls -al"
+alias ln="ln -v"
+alias mkdir="mkdir -p"
+alias e="$EDITOR"
+alias v="$VISUAL"
+
+# Bundler
 alias b="bundle"
-alias be="bundle exec"
-alias ln='ln -v'
-alias mkdir='mkdir -p'
-alias ...='../..'
-alias l='ls'
-alias ll='ls -al'
-alias lh='ls -Alh'
 
-alias -g G='| grep'
-alias -g M='| less'
-alias -g L='| wc -l'
-alias -g ONE="| awk '{ print \$1}'"
+# Rails
+alias migrate="rake db:migrate db:rollback && rake db:migrate"
+alias s="rspec"
 
-alias crvmrc="echo \"rvm use \`rvm current\`\" >> .rvmrc; rvm rvmrc trust ."
-alias bo="EDITOR=$BUNDLE_EDITOR bundle open" 
-alias edit=$GUI_EDITOR
-alias zshrc='. ~/.zshrc && . ~/.zlogin'
-alias rake='noglob rake'
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
 
-#alias ssht_chef_msu="ssh -f login.msu.montana.edu -L 4141:chef.rcg.montana.edu:4040 -N"
-#alias ssht_chef_couch_msu="ssh -f chef.rcg.montana.edu -L 6984:localhost:5984 -N"
-#alias ssht_chef_couch_remote="ssh -f login.msu.montana.edu -L 2222:chef.rcg.montana.edu:22 -N && ssh -f localhost -p 2222 -L 6984:localhost:5984 -N"
-
-alias start_postgres="sudo -u postgres /Library/PostgreSQL/9.0/bin/pg_ctl -D /Library/PostgreSQL/9.0/data startj"
-alias stop_postgres="sudo -u postgres /Library/PostgreSQL/9.0/bin/pg_ctl -D /Library/PostgreSQL/9.0/data stop"
-
-alias tasks="mvim ~/.atea_tasks/tasks.txt"
-alias atea="tasks"
-alias shef="shef -z -c ~/.chef/knife.rb"
-# suppress autocorrect with alias (alias heroku='nocorrect heroku')
-
-alias flush_dns_cache="sudo killall -HUP mDNSResponder"
-
-# shortened functions for long commands
-function lt() { ls -ltrsa "$@" | tail; }
-function psgrep() { ps axu | grep -v grep | grep "$@" -i --color=auto; }
-function fname() { find . -iname "*$@*"; }
-alias pt='lp -o raw -d Hewlett_Packard_HP_LaserJet_1200'
-alias gc='git checkout'
-alias yt2mp3='youtube-dl -t --extract-audio --audio-format mp3'
-alias hyalite='ssh hyalite.rcg.montana.edu -L 9000:localhost:5901'
-function rmkh() { X='d'; Z=$1$X; sed -n -e "$Z" -i "$1.rmkh" ~/.ssh/known_hosts; }
+# Include custom aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
