@@ -5,6 +5,10 @@ fpath=(~/.zsh/completion $fpath)
 autoload -U compinit
 compinit
 
+autoload -U colors
+colors
+setopt prompt_subst
+
 # automatically enter directories without cd
 setopt auto_cd
 
@@ -69,7 +73,7 @@ setopt cdablevars
 setopt CORRECT CORRECT_ALL
 
 # Enable extended globbing
-setopt EXTENDED_GLOB
+unsetopt EXTENDED_GLOB
 
 # Enable BASH-style regexp
 setopt BASH_REMATCH

@@ -1,3 +1,5 @@
+local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
+
 # adds the current branch name in green
 git_prompt_info() {
   git rev-parse --git-dir &> /dev/null
@@ -43,6 +45,7 @@ export CLICOLOR=1
 setopt prompt_subst
 
 # prompt
-export PS1='$(rvm_prompt_info) $(git_prompt_info)
-%~ %{$fg[magenta]%}∴ %{$reset_color%}'
-
+#export PS1='$(rvm_prompt_info) $(git_prompt_info)
+#${smiley} %{$reset_color%}%~ %{$fg[magenta]%}∴ %{$reset_color%}'
+PROMPT='${smiley} %{$reset_color%}%~ %{$fg[magenta]%}∴ %{$reset_color%}'
+RPROMPT='$(rvm_prompt_info) $(git_prompt_info)'
